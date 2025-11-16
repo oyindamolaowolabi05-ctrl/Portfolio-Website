@@ -1,0 +1,539 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: white;
+    background-color: #0a0a0a;
+}
+
+/* =============================
+   Header & Navigation
+============================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #00bcd4;
+}
+
+/* =============================
+   Home Section
+============================= */
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* aligns image and text to the left */
+    padding: 100px 10%;
+    min-height: 100vh;
+    background: url('skills\ background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+    z-index: 0;
+}
+
+.home-img, .home-content {
+    position: relative;
+    z-index: 1;
+}
+
+.home-img {
+    flex: 1.3; /* more space for the image */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.home-img img {
+    width: 500px; /* bigger image */
+    max-width: 100%; /* keeps responsive */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.home-content {
+    flex: 1.7; /* space for text next to image */
+    padding-left: 50px;
+    text-align: left;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.home-content h3 {
+    font-size: 1.7rem;
+    color: #00bcd4;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    line-height: 1.6;
+    max-width: 600px;
+    font-size: 1.1rem;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #0077b5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .home-img img {
+        width: 400px; /* slightly smaller on medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 5%;
+    }
+
+    .home-img {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .home-content {
+        padding-left: 0;
+    }
+
+    .home-img img {
+        width: 70%; /* scales nicely on mobile */
+    }
+
+    .home-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .home-content p {
+        max-width: 100%;
+    }
+}
+
+
+/* =============================
+   Education Section
+============================= */
+.education {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 120px 10%;
+    min-height: 100vh;
+    color: white;
+    background: url('education\ background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.education .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.education .edu-container {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.education h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00bcd4;
+}
+
+.edu-item {
+    margin-bottom: 30px;
+}
+
+.edu-item h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.edu-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* =============================
+   Skills & Leadership Section
+============================= */
+.skills-leadership {
+    position: relative;
+    padding: 120px 10%;
+    min-height: 100vh;
+    color: white;
+    background: url('skills\ background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.skills-leadership .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.skills-leadership .container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    text-align: left;
+    background: rgba(0,0,0,0.3);
+    padding: 30px;
+    border-radius: 10px;
+    margin-left: 0; /* Align container to the left */
+}
+
+.skills-leadership h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00bcd4;
+}
+
+.skills-leadership .skills p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.skills-leadership .awards {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-leadership .awards li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.skills-leadership .awards li::before {
+    content: "•";
+    color: #00bcd4;
+    position: absolute;
+    left: 0;
+}
+
+/* =============================
+   Experience Section
+============================= */
+.experience {
+    position: relative;
+    display: flex;
+    align-items: center; /* vertically center container */
+    padding: 120px 10%;
+    min-height: 100vh;
+    color: white;
+    background: url('skills\ background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    overflow: hidden;
+}
+
+.experience::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay for readability */
+    z-index: 0;
+}
+
+.experience .container {
+    position: relative;
+    z-index: 1;
+    max-width: 700px; /* controls text width */
+    text-align: left;
+    background: rgba(0, 0, 0, 0.3); /* semi-transparent box behind text */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.experience h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #00bcd4;
+}
+
+.job {
+    margin-bottom: 40px;
+}
+
+.job h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.job p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.job ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.job ul li {
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.job ul li::before {
+    content: "•";
+    color: #00bcd4;
+    position: absolute;
+    left: -15px;
+}
+
+.resume-download {
+    text-align: left; /* align button to left with content */
+    margin-top: 30px;
+}
+
+.resume-download .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #00bcd4;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.resume-download .btn:hover {
+    background: #0077b5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .experience .container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 900px) {
+    .experience {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 5%;
+    }
+
+    .experience .container {
+        max-width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .experience h1 {
+        font-size: 2rem;
+    }
+
+    .job h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* =============================
+   Contact Section
+============================= */
+.contact {
+    position: relative;
+    padding: 120px 10%;
+    min-height: 100vh;
+    color: white;
+    background: url('Contact\ background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.contact .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0;
+    padding-left: 10%;
+    text-align: left;
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00bcd4;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.contact-info a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* =============================
+   Responsive Design
+============================= */
+@media (max-width: 900px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-img {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .home-content {
+        padding-left: 0;
+    }
+
+    .education, .contact, .skills-leadership {
+        padding: 80px 5%;
+    }
+
+    .education .edu-container,
+    .contact .container,
+    .skills-leadership .container {
+        max-width: 100%;
+        padding-left: 5%;
+        margin-left: 0;
+    }
+
+    .home-content p,
+    .education p,
+    .contact p,
+    .skills-leadership p {
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+/* Separator between projects/jobs */
+.job:not(:last-child), .project:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle line */
+    padding-bottom: 30px; /* space below content before line */
+    margin-bottom: 40px; /* space after line */
+}
+
+/* Optional: adjust for smaller screens */
+@media (max-width: 900px) {
+    .job:not(:last-child), .project:not(:last-child) {
+        padding-bottom: 25px;
+        margin-bottom: 30px;
+    }
+}
